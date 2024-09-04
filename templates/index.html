@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+  </head>
+
+  <body style="background-color: black;">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light"
+      style="background-color: white;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Book Recommender System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav" aria-controls="navbarNav"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/recommend">Recommend</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contactinfo">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Building a recommendation menu -->
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="text-white"
+            style="color: white; font-size: 40; margin-top: 50px;">Top 50
+            Books</h1>
+        </div>
+
+        {% for i in range(book_name|length) %}
+        <div class="col-md-3" style="margin-top: 50px;">
+          <div class="card" style="width: 250px; height: 300px;">
+            <div class="card-body">
+              <img class="card-img-togg"
+                src="{{image[i]}}"
+                alt="book{{i}}">
+              <h3 class="text-black"">Harry
+                Potter</h3>
+              <p class="text-black" style="line-height: 10px;">{{author[i]}}</p>
+              <p class="text-black" style="line-height: 10px;">Votes:
+                {{votes[i]}}</p>
+              <p class="text-black" style="line-height: 10px;">Ratings:
+                {{ratings[i]}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+        <!-- --------------------------------Image Gallary  ------------------------------>
+
+      </div>
+    </div>
+
+    <!-- Image Gallary ------------------------------>
+
+    <!-- Your other content goes here -->
+
+    <!-- Bootstrap JS (necessary for interactive components like collapsible navbar) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,5 @@
+- flask: deploying recommender system 
+- numpy: data preprocessing on numeric data
+- pandas: data preprocessing on general data
+- gunicron
+
